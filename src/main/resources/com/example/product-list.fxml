@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.control.Button?>
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.controller.ProductListController"
+            prefWidth="900" prefHeight="600"
+            style="-fx-background-color: #f4f6f9;">
+
+    <TableView fx:id="productTable" layoutX="20" layoutY="20" prefWidth="560" prefHeight="320"
+               style="-fx-border-color: #ced4da; -fx-border-radius: 6; -fx-background-radius: 6;">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="100" style="-fx-alignment: CENTER-LEFT;"/>
+            <TableColumn fx:id="nameColumn" text="Name" prefWidth="300" style="-fx-alignment: CENTER-LEFT;"/>
+            <TableColumn fx:id="priceColumn" text="Price" prefWidth="160" style="-fx-alignment: CENTER-RIGHT;"/>
+        </columns>
+    </TableView>
+
+<!--    <Label fx:id="messageLabel" layoutX="20" layoutY="350" prefWidth="560"-->
+<!--           textFill="#dc3545" style="-fx-font-weight: bold; -fx-font-size: 13px;"/>-->
+    <Label fx:id="messageLabel"
+           layoutX="20" layoutY="440"
+           prefWidth="560"
+           textFill="#dc3545"
+           style="-fx-font-weight: bold; -fx-font-size: 13px;" />
+    <Button fx:id="controlPanelButton"
+            layoutX="450" layoutY="400"
+            prefWidth="150" prefHeight="30"
+            text="Go to Control Panel"
+            onAction="#goToControlPanel"
+            style="-fx-background-color: #740e29; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+</AnchorPane>

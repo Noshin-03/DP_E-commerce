@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.controller.AddProductController"
+            prefWidth="600" prefHeight="600"
+            style="-fx-background-color: #f9f9f9;">
+
+    <VBox alignment="CENTER" spacing="20"
+          AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="50.0"
+          AnchorPane.rightAnchor="50.0" AnchorPane.bottomAnchor="50.0">
+
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <Label text="Add New Product"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #740e29;" />
+
+        <HBox spacing="15" alignment="CENTER_LEFT" maxWidth="400">
+            <Label text="Product Name:" minWidth="120"
+                   style="-fx-font-size: 16px; -fx-text-fill: #3a1a1f;" />
+            <TextField fx:id="nameField" promptText="Enter product name"
+                       style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #d3a1a8; -fx-padding: 7;"
+                       HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+        <HBox spacing="15" alignment="CENTER_LEFT" maxWidth="400">
+            <Label text="Price:" minWidth="120"
+                   style="-fx-font-size: 16px; -fx-text-fill: #3a1a1f;" />
+            <TextField fx:id="priceField" promptText="Enter price"
+                       style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #d3a1a8; -fx-padding: 7;"
+                       HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+        <Label fx:id="statusLabel" textFill="#740e29" style="-fx-font-size: 15px;" />
+
+        <Button text="Add Product" prefWidth="300" prefHeight="45"
+                style="-fx-background-color: #740e29; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 18px; -fx-background-radius: 8;"
+                onAction="#handleAddProduct" />
+    </VBox>
+
+</AnchorPane>

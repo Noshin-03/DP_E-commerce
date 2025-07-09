@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.controller.ControlPanelController"
+            prefWidth="600" prefHeight="600"
+            style="-fx-background-color: #f4f6f9;">
+
+    <VBox spacing="20" alignment="CENTER"
+          AnchorPane.topAnchor="100.0"
+          AnchorPane.leftAnchor="100.0"
+          AnchorPane.rightAnchor="100.0"
+          AnchorPane.bottomAnchor="100.0"
+          prefWidth="400">
+
+        <padding>
+            <Insets top="30" right="20" bottom="30" left="20"/>
+        </padding>
+
+        <Button text="View Order List" prefWidth="300" prefHeight="40"
+                style="-fx-background-color: #148041; -fx-text-fill: #e8f5e9; -fx-font-weight: bold; -fx-font-size: 18px; -fx-background-radius: 6;"
+                onAction="#handleOrderList"/>
+
+        <Button text="View Product List" prefWidth="300" prefHeight="40"
+                style="-fx-background-color: #148041; -fx-text-fill: #e8f5e9; -fx-font-weight: bold; -fx-font-size: 18px; -fx-background-radius: 6;"
+                onAction="#handleProductList"/>
+
+        <Button text="View Customer List" prefWidth="300" prefHeight="40"
+                style="-fx-background-color: #148041; -fx-text-fill: #e8f5e9; -fx-font-weight: bold; -fx-font-size: 18px; -fx-background-radius: 6;"
+                onAction="#handleCustomerList"/>
+
+        <Button text="Add Product" prefWidth="300" prefHeight="40"
+                style="-fx-background-color: #740e29; -fx-text-fill: #f8d7da; -fx-font-weight: bold; -fx-font-size: 18px; -fx-background-radius: 6;"
+                onAction="#handleAddProduct"/>
+        <!-- Go to Dashboard Button -->
+        <Button text="Go to Dashboard" prefWidth="300" prefHeight="40"
+                style="-fx-background-color: #495057; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 18px; -fx-background-radius: 6;"
+                onAction="#handleGoToDashboard"/>
+    </VBox>
+
+</AnchorPane>

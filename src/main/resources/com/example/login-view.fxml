@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="520.0"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.controller.AuthController"
+            style="-fx-background-color: #f4f6f9;">
+
+    <!-- Title -->
+    <Label layoutX="210.0" layoutY="30.0" text="Login" textFill="#2c3e50">
+        <font>
+            <Font name="Segoe UI Semibold" size="24.0"/>
+        </font>
+    </Label>
+
+    <!-- Username/Email Label -->
+    <Label layoutX="80.0" layoutY="90.0" text="Username or Email" textFill="#2c3e50">
+        <font>
+            <Font name="Segoe UI" size="14.0"/>
+        </font>
+    </Label>
+    <!-- Username/Email TextField -->
+    <TextField fx:id="emailField" layoutX="80.0" layoutY="115.0" prefHeight="35.0" prefWidth="360.0"
+               promptText="Enter username or email"
+               style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #ced4da;"/>
+
+    <!-- Password Label -->
+    <Label layoutX="80.0" layoutY="165.0" text="Password" textFill="#2c3e50">
+        <font>
+            <Font name="Segoe UI" size="14.0"/>
+        </font>
+    </Label>
+    <!-- PasswordField -->
+    <PasswordField fx:id="passwordField" layoutX="80.0" layoutY="190.0" prefHeight="35.0" prefWidth="360.0"
+                   promptText="Enter password"
+                   style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #ced4da;"/>
+
+    <!-- Error Message Label -->
+    <Label fx:id="errorLabel" layoutX="80.0" layoutY="235.0" prefWidth="360.0"
+           textFill="#dc3545" style="-fx-font-size: 13px; -fx-font-weight: bold;" />
+
+    <!-- Login Button -->
+    <Button layoutX="80.0" layoutY="270.0" prefWidth="360.0" prefHeight="40.0" text="Log In"
+            onAction="#handleLoginButton" textFill="white"
+            style="-fx-background-color: #740e29; -fx-background-radius: 6; -fx-font-weight: bold;">
+        <font>
+            <Font name="Segoe UI Semibold" size="16.0"/>
+        </font>
+    </Button>
+
+    <!-- Go to Home Page Button -->
+    <Button layoutX="80.0" layoutY="320.0" prefWidth="360.0" prefHeight="40.0" text="Go to Home Page"
+            onAction="#handleGoToHomePageButton" textFill="white"
+            style="-fx-background-color: #148041; -fx-background-radius: 6; -fx-font-weight: bold;">
+        <font>
+            <Font name="Segoe UI Semibold" size="16.0"/>
+        </font>
+    </Button>
+
+</AnchorPane>
