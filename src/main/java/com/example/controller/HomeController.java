@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,64 +12,55 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-import com.example.HelloApplication;
-
 public class HomeController {
+
+    private void openScene(String fxmlFile, ActionEvent event, String title) {
+        try {
+            HelloApplication.setRoot(fxmlFile);
+            HelloApplication.setTitle(title);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     private void handleViewProfile(ActionEvent event) {
-        System.out.println("View Profile clicked");
-        // TODO: Load the profile page
-        // Example:
-        // loadScene(event, "profile-view", "Profile");
+        loadScene(event, "profile-view", "Profile");
     }
 
     @FXML
     private void handleViewProducts(ActionEvent event) {
-        System.out.println("View Products clicked");
-        // TODO: Load the product list page
         loadScene(event, "product-list", "Product List");
     }
 
     @FXML
     private void handleOrders(ActionEvent event) {
-        System.out.println("My Orders clicked");
-        // TODO: Load the orders page
-        // loadScene(event, "order-list", "Orders");
+        loadScene(event, "order-list", "Orders");
     }
 
     @FXML
     private void handleSettings(ActionEvent event) {
-        System.out.println("Settings clicked");
-        // TODO: Load the settings page
-        // loadScene(event, "settings-view", "Settings");
+        loadScene(event, "settings-view", "Settings");
     }
 
     @FXML
-    private void handleLogout(ActionEvent event) throws IOException {
-        System.out.println("Logout clicked");
-        // Redirect to login page
-        loadScene(event, "login-view", "Login Page");
+    private void handleControlPanel(ActionEvent event) {
+        loadScene(event, "control-panel", "Control Panel");
     }
-
-//    FXMLLoader loader = new FXMLLoader(getClass().getResource("login-view"));
-//    Parent root = loader.load();
-//    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//                stage.setScene(new Scene(root));
-//                stage.setTitle("Login Page");
-//                stage.show();
 
     @FXML
-    private void handleControlPanel(ActionEvent event) throws IOException {
-        HelloApplication.setRoot("control-panel");
-        HelloApplication.setTitle("Control Panel");
+    private void handleLogout(ActionEvent event) {
+//        loadScene(event, "login-view", "Login Page");
+        openScene("login-view", event, "Login Page");
     }
 
-
-    // Utility method to load a new scene
-    private void loadScene(ActionEvent event, String fxmlPath, String title) {
+    // Utility method to load FXML scenes consistently
+    private void loadScene(ActionEvent event, String fxmlName, String title) {
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxmlPath)));
+            FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(
+                    getClass().getResource("/com/example/view/" + fxmlName + ".fxml")
+            ));
+            Parent root = loader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.setTitle(title);
