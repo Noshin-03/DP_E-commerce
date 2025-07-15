@@ -33,11 +33,3 @@ src/
 ## 📜 Requirements
 - ✅ Java 17+ (Java 21 or OpenJDK 24 recommended)
 - ✅ JavaFX SDK (version matching your runtime)
-
----
-
-### ✅ **Step 3: Commit and Push**
-```bash
-git add README.md
-git commit -m "Added project README"
-git push
